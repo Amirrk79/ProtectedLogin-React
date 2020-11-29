@@ -1,10 +1,11 @@
 import React , { Component } from 'react';
-import { Switch , Route , BrowserRouter as Router , Redirect} from 'react-router-dom';
+import { Switch , BrowserRouter as Router } from 'react-router-dom';
 import Login from './LoginPage.js';
 import Admin from './AdminPage.js';
-import * as route from './Routes.js';
 import ProtectedRoute from './Protect/ProtectedRoute.js';
 import UnProtectedRoute from './Protect/unProtectedRoute.js';
+import { LoginPage , AdminPage} from './Routes';
+
 
 
 
@@ -14,8 +15,8 @@ export class Links extends Component {
         return(
             <Router>
                 <Switch>
-                    <UnProtectedRoute path="/Login" component={Login} />
-                    <ProtectedRoute path="/Admin" component={Admin} />
+                    <UnProtectedRoute path={LoginPage} component={Login} />
+                    <ProtectedRoute path={AdminPage} component={Admin} />
                     <ProtectedRoute path="/" />
                 </Switch>
             </Router>

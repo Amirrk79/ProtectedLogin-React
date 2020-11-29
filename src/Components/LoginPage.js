@@ -1,5 +1,7 @@
 import React from 'react';
-import { withRouter , Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+
+
 
 
 
@@ -30,7 +32,7 @@ import { withRouter , Redirect } from 'react-router-dom';
         e.preventDefault();
         if(this.state.username === "admin" && this.state.password === "admin") {
             this.setState({isLoggedIn : true} , () => {
-                localStorage.setItem('LoggedIn' , this.state.isLoggedIn);
+                JSON.stringify(localStorage.setItem('LoggedIn' , this.state.isLoggedIn));
                 this.props.history.push("/Admin");
             });
         } else {

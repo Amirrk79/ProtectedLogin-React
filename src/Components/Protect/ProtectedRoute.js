@@ -1,9 +1,11 @@
-import React , { Component } from "react";
+import React from "react";
 import { Redirect , Route } from 'react-router-dom';
 
 
+
+
 function ProtectedRoute({component: Component , path , ...rest}) {
-    const isLoggedIn = localStorage.getItem("LoggedIn");
+    const isLoggedIn = JSON.parse(localStorage.getItem("LoggedIn"));
     return(
         <Route 
         path={path}

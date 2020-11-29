@@ -1,4 +1,4 @@
-import React , { Component } from "react";
+import React from "react";
 import { Route } from 'react-router-dom';
 
 
@@ -6,7 +6,7 @@ const { Redirect } = require("react-router-dom");
 
 
 function UnProtectedRoute({component: Component , path , ...rest }) {
-    const isLoggedIn = localStorage.getItem("LoggedIn");
+    const isLoggedIn = JSON.parse(localStorage.getItem("LoggedIn"));
     return(
         <Route 
         path={path}

@@ -1,2 +1,2 @@
-const LoginPage = "/Login";
-const AdminPage = "/Admin";
+export const LoginPage = "/Login";
+export const AdminPage = "/Admin";
